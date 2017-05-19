@@ -1,0 +1,41 @@
+﻿[
+  {
+    "name": "Pizza",
+    "component": "MenuPage" },
+  {
+    "name": "Hamburger",
+    "component": "MenuSinglePage"
+  },
+  {
+    "name": "Pasta",
+    "component": "MenuSinglePage"
+  },
+  {
+    "name": "Desserts",
+    "component": "MenuSinglePage"
+  },
+  {
+    "name": "Dranken",
+    "component": "MenuSinglePage"
+  },
+  {
+    "name": "Fingerfood",
+    "component": "MenuSinglePage"
+  },
+  {
+    "name": "Salads",
+    "component": "MenuSinglePage"
+  },
+  {
+    "name": "Funny Meal",
+    "component": "MenuSinglePage"
+  },
+  {
+    "name": "Shopper",
+    "component": "MenuSinglePage"
+  },
+  {
+    "name": "Acties",
+    "component": "MenuSinglePage"
+  }
+]

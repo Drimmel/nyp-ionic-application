@@ -1,0 +1,46 @@
+<!--
+  Generated template for the MyVipcardAndBadges page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+      <ion-title>{{ 'VIPCARD_PAGE_TITLE' | translate }}</ion-title>
+      <button ion-button menuToggle="none" (click)="searchActive =! searchActive; openSearchBar();" end>
+          <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button menuToggle="right" end>
+          <ion-icon name="basket"></ion-icon>
+          <span class="receipt-amount" *ngIf="receipt.length > 0">
+              {{getSum()}}
+          </span>
+      </button>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <div class="container" text-center>
+        <h3 ion-text color="primary"><b>{{ 'VIPCARD_MYCARD_TITLE' | translate }}</b></h3>
+        <p no-margin>{{ 'VIPCARD_PAGE_TEXT' | translate }}</p>
+        <h6 no-margin margin-bottom><b>{{ 'VIPCARD_CARDNR_TEXT' | translate }}</b> 001AGD2909</h6>
+
+        <img margin-bottom src="./assets/images/vipcard_large.png" />
+        <ion-item no-padding margin-bottom>
+            <ion-input type="text" placeholder="{{ 'VIPCARD_INPUT_PLACEHOLDER' | translate }}" value="001AGD2909"></ion-input>
+        </ion-item>
+        <ion-grid margin-bottom>
+            <ion-row>
+                <ion-col>
+                    <button ion-button outline block round text-uppercase (click)="removeVipcard()">{{ 'VIPCARD_REMOVEBTN_TEXT' | translate }}</button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button block round text-uppercase (click)="saveVipcard()">{{ 'VIPCARD_CHANGEBTN_TEXT' | translate }}</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <b class="align_item_vertically" ion-text color="primary" (click)="openVipcardTerms()">{{ 'VIPCARD_TERMSLINK_TEXT' | translate }} &nbsp;<ion-icon name="arrow-forward"></ion-icon></b>
+    </div>
+</ion-content>

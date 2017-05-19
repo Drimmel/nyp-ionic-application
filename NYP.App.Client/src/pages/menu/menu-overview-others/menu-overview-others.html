@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle="left" start>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="header_title">
+            {{categoryName}}
+        </ion-title>
+        <button ion-button menuToggle="none" (click)="searchActive =! searchActive; openSearchBar();" end>
+            <ion-icon name="search"></ion-icon>
+        </button>
+        <button ion-button menuToggle="right" end>
+            <ion-icon name="basket"></ion-icon>
+            <span class="receipt-amount" *ngIf="receipt.length > 0">
+                {{getSum()}}
+            </span>
+        </button>
+    </ion-navbar>
+    <ion-toolbar *ngIf="searchActive" color="primary">
+        <ion-searchbar (ionInput)="getItems($event)" color="primary"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-list class="main-content">
+        <ion-item *ngFor="let product of MenuSingleData" padding no-lines (click)="addToReceipt(product)">
+            <h2 ion-text color="primary"><b>{{product.name}}</b></h2>
+            <p class="product-description">{{product.desc}}</p>
+            <span>{{product.bottom}} -</span> &nbsp; <span><b>&#8364;{{product.Price}}</b></span>
+            <button class="pick_pizza" ion-button round padding margin-top color="primary">{{ 'GENERAL_PICK_THIS' | translate }} {{categoryName}}</button>
+            <ion-avatar item-right>
+                <img src="{{product.imgsrc}}" />
+            </ion-avatar>
+            <button class="plus_sign_button" item-right ion-button clear no-padding>
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-item>
+    </ion-list>
+</ion-content>

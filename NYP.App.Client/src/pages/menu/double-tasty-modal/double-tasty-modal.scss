@@ -1,0 +1,362 @@
+page-double-tasty-modal {
+    ion-header {
+        overflow: hidden;
+        height: 130px;
+        background-image: url(../assets/images/wooden_bg_hz_big.jpg);
+        background-size: 100% 100px;
+        background-repeat: no-repeat;
+        background-position: 0px -100px;
+        transition: all 0.1s ease-in-out;
+
+        &.scrolled {
+            height: 130px;
+            background-position: 0px 0px;
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+
+            .dt-img-container {
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .pick-pizza-half-text-container {
+            position: absolute;
+            width: 100%;
+            top: 100px;
+            height: 30px;
+            background-color: #086;
+            color: #fff;
+            opacity: 0;
+            transition: opacity .1s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        ion-navbar {
+
+            button.back-button {
+                display: none !important;
+            }
+
+            .double-tasty-header-title {
+                padding-left: 70px !important;
+                padding-right: 70px !important;
+                visibility: hidden;
+
+                .toolbar-title {
+                    font-size: 90% !important;
+                }
+            }
+
+            button.basket {
+                display: block !important;
+            }
+        }
+
+        .dt-img-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            margin-top: -10px;
+            display: flex;
+            position: relative;
+            justify-content: center;
+
+            div {
+                overflow: hidden;
+                width: 25%;
+                transform: translate3d(0,140px,0);
+                transition: all .1s linear;
+                margin: 1px;
+
+                &.active {
+                    transform: translate3d(0,0%,0);
+                }
+
+                img {
+                    width: 200%;
+                    max-width: 500px;
+                    opacity: 0;
+
+                    &#dt-2-half-img {
+                        transform: translate3d(-50%, 0, 0);
+                    }
+                }
+            }
+        }
+    }
+
+    ion-content {
+        .scroll-content {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+
+            .header-image {
+                position: relative;
+                background-image: url(../assets/images/wooden_bg_hz_big.jpg);
+                background-size: cover;
+                height: 200px;
+                width: 100%;
+                min-height: 10vh;
+                max-height: 30vh;
+                display: flex;
+                overflow: hidden;
+                box-shadow: inset 0px 5px 40px -5px rgba(0,0,0,0.75);
+
+                #dt-header-title {
+                    position: absolute;
+                    margin: 0;
+                    color: #fff;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 5vw;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate3d(-50%, -50%, 0);
+                    transition: all .2s linear;
+
+                    &.active {
+                        transform: translate3d(-50%, -30vh, 0);
+                    }
+                }
+
+                .dt-img-container {
+                    width: 100%;
+                    max-width: 500px;
+                    margin: 0 auto;
+                    display: flex;
+                    position: relative;
+
+                    div {
+                        overflow: hidden;
+                        width: 50%;
+                        transform: translate3d(0,100%,0);
+                        transition: all .1s linear;
+                        margin: 1px;
+
+                        &.active {
+                            transform: translate3d(0,20%,0);
+                        }
+
+                        img {
+                            width: 200%;
+                            max-width: 500px;
+                            filter: drop-shadow(0px 0px 15px #000);
+
+                            &#dt-2-half-img {
+                                transform: translate3d(-50%, 0, 0);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .main-content {
+                background-color: white;
+
+                #double-tasty-header {
+                    top: 0;
+                    width: 100%;
+                    z-index: 10;
+                    background-color: #fff;
+
+                    #dt-text-header {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+
+                        h2 {
+                            border-bottom: 1px solid rgba(0,0,0,0.12);
+                        }
+
+
+                        .container {
+                            @media screen and (min-width: 600px) {
+                                max-width: 100%;
+
+                                form {
+                                    ion-item {
+                                        width: 50%;
+                                        float: left;
+                                    }
+                                }
+                            }
+
+                            ion-item {
+                                font-size: 1em;
+
+                                .item-inner {
+                                    border-bottom: none;
+                                    padding: 0;
+                                    
+                                    ion-select {
+                                        max-width: 70%;
+                                    }
+                                }
+
+                                ion-label {
+                                    width: 150px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                ion-list {
+                    overflow-y: scroll;
+                    width: 100%;
+
+                    @media screen and (min-width: 600px) {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                    }
+
+                    ion-item {
+                        border-bottom: 0.15px solid #c8c7cc !important;
+
+                        &:last-child {
+                            border-bottom: none !important;
+
+                            @media screen and (min-width: 600px) {
+                                border-bottom: 0.15px solid #c8c7cc !important;
+                            }
+                        }
+
+                        @media screen and (min-width: 600px) {
+                            width: 50% !important;
+                        }
+
+                        ion-label {
+                            white-space: normal;
+
+                            h2 {
+                                padding-bottom: 1rem;
+                            }
+
+                            .product-description {
+                                height: 32px;
+                                font-size: 1.2rem;
+                                position: relative;
+                            }
+
+                            span {
+                                font-size: 13px;
+                            }
+                        }
+
+                        ion-avatar, ion-avatar img {
+                            margin: 0 !important;
+                            min-width: 80px !important;
+                            min-height: 80px !important;
+                            position: relative;
+
+                            ion-icon {
+                                position: absolute;
+                                right: 0;
+                                bottom: 0;
+                                background: #fff;
+                                font-size: 1em;
+                                line-height: 1.5em;
+                                width: 1.5em;
+                                text-align: center;
+                                color: #086;
+                                border-radius: 50%;
+                                box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.4);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ion-footer {
+        transform: translate3d(0, 100%, 0);
+        transition: all 0.1s linear;
+        
+        button {
+            @media screen and (min-width: 600px) {
+                display: inline-block !important;
+                width: auto !important;
+                font-size: 20px !important;
+                padding: 1em 2.5em !important;
+            }
+        }
+    }
+
+    #small-product-desc {
+        position: fixed;
+        z-index: 1400;
+        width: 95%;
+        left: 2.5%;
+        top: 50%;
+        transform: translateY(-50%);
+        height: auto;
+        background-color: #fff;
+        border-radius: 8px;
+        z-index: 1400;
+        display: none;
+        text-align: center;
+        padding: 16px;
+
+        &.active {
+            display: block;
+            box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.25);
+        }
+
+        ion-icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 35px;
+            width: 37px;
+            line-height: 37px;
+            text-align: center;
+        }
+
+        img {
+            width: 60%;
+        }
+
+        h4 {
+            color: #086;
+            font-weight: 600;
+        }
+    }
+    /* BounceIn animation */
+    @keyframes bounceIn {
+        from, 20%, 40%, 60%, 80%, to {
+            animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        }
+
+        0% {
+            opacity: 0;
+            transform: scale3d(.3, .3, .3);
+        }
+
+        20% {
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+
+        40% {
+            transform: scale3d(.9, .9, .9);
+        }
+
+        60% {
+            opacity: 1;
+            transform: scale3d(1.03, 1.03, 1.03);
+        }
+
+        80% {
+            transform: scale3d(.97, .97, .97);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale3d(1, 1, 1);
+        }
+    }
+}

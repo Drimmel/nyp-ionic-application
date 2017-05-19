@@ -1,0 +1,23 @@
+﻿[
+  {
+    "name": "Burger Kitchen",
+    "desc": "Grilled juicy burger with crispy lettuce, cocktail sauce, cheddar cheese and caramelized red onion.",
+    "bottom": "Burger",
+    "Price": 7,
+    "imgsrc": "./assets/images/burgers/burger-kitchen.png"
+  },
+  {
+    "name": "Chicken Burger",
+    "desc": "Marinated chicken thigh filet with fried onion, fresh lettuce and mayonnaise.",
+    "bottom": "Burger",
+    "Price": 7,
+    "imgsrc": "./assets/images/burgers/burger-chicken.png"
+  },
+  {
+    "name": "Bio Burger",
+    "desc": "Bio Burger with crispy lettuce, cocktail sauce, cheddar cheese and caramelized red onion.",
+    "bottom": "Burger",
+    "Price": 8,
+    "imgsrc": "./assets/images/burgers/burger-bio.png"
+  }
+]

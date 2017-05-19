@@ -1,0 +1,33 @@
+page-select-store {
+    .scroll-content {
+        overflow-y: auto;
+    }
+
+    #search-stores {
+        border: 1px solid rgba(0,0,0,0.1);
+        box-shadow: 0px 3px 20px -8px rgba(0,0,0,0.75);
+
+        .item-inner {
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        ion-input {
+            margin-right: 47px;
+        }
+
+        input.text-input {
+            margin: 0;
+            width: 100%;
+        }
+    }
+
+    p {
+        display: flex;
+        align-items: center;
+
+        ion-icon {
+            font-size: 1em;
+        }
+    }
+}

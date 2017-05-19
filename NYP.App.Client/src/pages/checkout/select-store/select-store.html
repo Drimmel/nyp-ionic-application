@@ -1,0 +1,62 @@
+<!--
+  Generated template for the SelectStore page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+      <button ion-button menuToggle="right" end>
+          <ion-icon name="basket"></ion-icon>
+          <span class="receipt-amount" *ngIf="receipt.length > 0">
+              {{getSum()}}
+          </span>
+      </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h4 ion-text color="primary" margin-bottom text-center>{{ 'SELECT_STORE_TITLE' | translate }}</h4>
+
+    <ion-item id="search-stores" margin-bottom no-padding>
+        <ion-label margin-left margin-right color="light"><ion-icon name="search"></ion-icon></ion-label>
+        <ion-input no-margin type="text" text-center [(ngModel)]="address"></ion-input>
+    </ion-item>
+
+    <button ion-button clear no-margin no-padding color="primary" (click)="getPos()">
+        {{ 'SELECT_STORE_GEOLOCATION_TEXT' | translate }} &nbsp; <ion-icon name="locate"></ion-icon>
+    </button>
+
+    <ion-list margin-top>
+        <ion-item no-padding>
+            <ion-thumbnail item-left>
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/ec/48/df/ec48dfe27e9d8ff4b6710a20d07f0d70.jpg">
+            </ion-thumbnail>
+            <h2>New York Pizza Huizen</h2>
+            <p>Havenstraat 20A</p>
+            <p>2171 AE Huizen &nbsp; <span ion-text color="primary"><ion-icon name="arrow-forward"></ion-icon> 1.2km</span></p>
+            <button ion-button clear item-right navPop>{{ 'SELECT_STORE_PICK' | translate }}</button>
+        </ion-item>
+        <ion-item no-padding>
+            <ion-thumbnail item-left>
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/ec/48/df/ec48dfe27e9d8ff4b6710a20d07f0d70.jpg">
+            </ion-thumbnail>
+            <h2>New York Pizza Huizen</h2>
+            <p>Havenstraat 20A</p>
+            <p>2171 AE Huizen &nbsp; <span ion-text color="primary"><ion-icon name="arrow-forward"></ion-icon> 1.2km</span></p>
+            <button ion-button clear item-right navPop>{{ 'SELECT_STORE_PICK' | translate }}</button>
+        </ion-item>
+        <ion-item no-padding>
+            <ion-thumbnail item-left>
+                <img src="https://s-media-cache-ak0.pinimg.com/564x/ec/48/df/ec48dfe27e9d8ff4b6710a20d07f0d70.jpg">
+            </ion-thumbnail>
+            <h2>New York Pizza Huizen</h2>
+            <p>Havenstraat 20A</p>
+            <p>2171 AE Huizen &nbsp; <span ion-text color="primary"><ion-icon name="arrow-forward"></ion-icon> 1.2km</span></p>
+            <button ion-button clear item-right navPop>{{ 'SELECT_STORE_PICK' | translate }}</button>
+        </ion-item>
+    </ion-list>
+</ion-content>

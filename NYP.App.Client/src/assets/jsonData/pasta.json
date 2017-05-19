@@ -1,0 +1,16 @@
+﻿[
+  {
+    "name": "New York Lasagne",
+    "desc": "Nieuw recept. Heerlijke lasagne met bolognesesaus, rundergehakt en plakjes deeg.",
+    "bottom": "Portie",
+    "Price": 10,
+    "imgsrc": "./assets/images/pastas/ny-lasagne.png"
+  },
+  {
+    "name": "Cannelloni",
+    "desc": "Nieuw! Probeer nu onze overheerlijke Cannelloni met spinazie ricotta-vulling!",
+    "bottom": "Portie",
+    "Price": 10,
+    "imgsrc": "./assets/images/pastas/cannelloni.png"
+  }
+]

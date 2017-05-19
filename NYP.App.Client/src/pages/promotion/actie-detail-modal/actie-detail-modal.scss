@@ -1,0 +1,49 @@
+page-actie-detail-modal {
+    .back-button {
+        display: block;
+    }
+
+    button[hidden] {
+        display: block !important;
+    }
+
+    .scroll-content {
+        overflow-y: auto;
+    }
+
+    ion-content {
+        h3 {
+            margin-top: 0.5rem !important;
+        }
+
+        .subtext {
+            font-size: 0.9em;
+            margin: 0 auto;
+            line-height: 18px;
+            margin-bottom: 0;
+
+            @media screen and (min-width: 600px) {
+                max-width: 70%;
+            }
+        }
+
+        .vip-warning {
+            background-color: #fcf8e3;
+            border-radius: 3px;
+            padding: 12px;
+            color: #8a6d3b;
+
+            p {
+                margin: 0;
+                font-size: 0.85em;
+            }
+        }
+
+        ion-list {
+            ion-item {
+                font-size: 1em !important;
+                padding: 0 !important;
+            }
+        }
+    }
+}

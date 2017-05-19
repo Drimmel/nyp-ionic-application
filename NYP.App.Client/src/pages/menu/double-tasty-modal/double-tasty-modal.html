@@ -1,0 +1,119 @@
+<ion-header no-border>
+
+    <ion-navbar hideBackButton="true" color="transparent">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="goBack()">
+                <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <button ion-button menuToggle="right" end class="basket">
+            <ion-icon name="basket"></ion-icon>
+            <span class="receipt-amount">
+            </span>
+        </button>
+    </ion-navbar>
+
+    <div class="dt-img-container">
+        <div id="dt-1-half">
+            <img id="dt-1-half-img" src="" />
+        </div>
+        <div id="dt-2-half">
+            <img id="dt-2-half-img" src="" />
+        </div>
+    </div>
+
+    <div class="pick-pizza-half-text-container" text-center>
+        <span class="pick-pizza-half-text">Kies je eerste pizza helft</span>
+    </div>
+
+</ion-header>
+
+
+<ion-content>
+  
+    <div class="header-image">
+        
+        <h1 id="dt-header-title">Kies de eerste pizzahelft</h1>
+
+        <div class="dt-img-container">
+            <div id="dt-1-half">
+                <img id="dt-1-half-img" src="" />
+            </div>
+            <div id="dt-2-half">
+                <img id="dt-2-half-img" src="" />
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div id="double-tasty-header">
+            <div id="dt-text-header">
+                <h2 text-center no-margin padding-vertical>Double Tasty</h2>
+                <div class="container">
+                    <form>
+                        <ion-item padding-right padding-left no-lines>
+                            <ion-label>{{ 'GENERAL_PICK_BOTTOM' | translate }}</ion-label>
+                            <ion-select>
+                                <ion-option value="25cmNY" selected="true">25cm NY Style - &#8364;11.99</ion-option>
+                                <ion-option value="30cmNY">30cm NY Style - &#8364;11.99</ion-option>
+                            </ion-select>
+                        </ion-item>
+                        <ion-item padding-right padding-left no-lines>
+                            <ion-label>{{ 'GENERAL_PICK_BORDERTOPPING_LABEL' | translate }}</ion-label>
+                            <ion-select>
+                                <ion-option value="knoflookolie" selected="true">Knoflookolie - &#8364;0.00</ion-option>
+                                <ion-option value="cheddar">Gesmolten cheddar - &#8364;1.25</ion-option>
+                                <ion-option value="parmazan">Parmazaanse kaas - &#8364;1.25</ion-option>
+                                <ion-option value="Niets">Niets - &#8364;0.00</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </form>
+                    <ion-item text-uppercase>
+                        <h6 ion-text color="primary" text-center class="pick-pizza-half-text-2"><b>Kies de eerste pizzahelft</b></h6>
+                    </ion-item>
+                </div>
+                
+            </div>
+        </div>
+
+        <ion-list id="pizza-list" padding-bottom>
+            <ion-item *ngFor="let product of productData" padding no-lines>
+                <ion-label (click)="addToDoubleTasty(product)">
+                    <h2 ion-text color="primary"><b>{{product.name}}</b></h2>
+                    <p class="product-description">{{product.desc}}</p>
+                    <span>{{product.bottom}} -</span> &nbsp; <span><b>&#8364;{{product.Price / 2}}</b></span>
+                </ion-label>
+                <ion-avatar item-right (click)="openSmallPizzaInformation(product)">
+                    <img src="{{product.imgsrc}}" />
+                    <ion-icon name="search"></ion-icon>
+                </ion-avatar>
+            </ion-item>
+            <ion-item *ngFor="let product of productData" padding no-lines>
+                <ion-label (click)="addToDoubleTasty(product)">
+                    <h2 ion-text color="primary"><b>{{product.name}}</b></h2>
+                    <p class="product-description">{{product.desc}}</p>
+                    <span>{{product.bottom}} -</span> &nbsp; <span><b>&#8364;{{product.Price / 2}}</b></span>
+                </ion-label>
+                <ion-avatar item-right (click)="openSmallPizzaInformation(product)">
+                    <img src="{{product.imgsrc}}" />
+                    <ion-icon name="search"></ion-icon>
+                </ion-avatar>
+            </ion-item>
+        </ion-list>
+    </div>
+
+</ion-content>
+
+<div id="small-product-desc">
+    <ion-icon name="close" color="primary" (click)="closeSmallDesc()"></ion-icon>
+    <img src="" /><h4></h4><p></p>
+</div>
+
+<ion-footer no-border text-center>
+    <ion-toolbar color="transparent">
+        <div class="container order-button" padding-left padding-right>
+            <button ion-button block round color="primary" navPop (click)="addToReceipt()">{{ 'GENERAL_ORDER_TEXT' | translate }} - &#8364; 12</button>
+        </div>
+    </ion-toolbar>
+</ion-footer>

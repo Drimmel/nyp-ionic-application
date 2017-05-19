@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle="left" start>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="header_title">
+            {{ 'PROMOTION_PAGE_TITLE' | translate }}
+        </ion-title>
+        <button ion-button menuToggle="none" (click)="searchActive =! searchActive; openSearchBar();" end>
+            <ion-icon name="search"></ion-icon>
+        </button>
+        <button ion-button menuToggle="right" end>
+            <ion-icon name="basket"></ion-icon>
+            <span class="receipt-amount" *ngIf="receipt.length > 0">
+                {{getSum()}}
+            </span>
+        </button>
+    </ion-navbar>
+    <ion-toolbar *ngIf="searchActive" color="primary">
+        <ion-searchbar (ionInput)="getItems($event)" color="primary"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content no-bounce>
+    <div padding-top padding-bottom>
+        <h3 text-center ion-text color="primary"><b>{{ 'PROMOTION_SUBTITLE' | translate }}</b></h3>
+        <p class="subtext" text-center [ngClass]="{'active': showText }">{{ 'PROMOTION_PAGE_TEXT' | translate }}</p>
+        <div *ngIf="!showtext">
+            <button color="primary" ion-button clear block (click)="showText =! showText;">
+                {{ 'PROMOTION_READ_MORE' | translate }}
+            </button>
+        </div>
+    </div>
+
+    <section> <!-- Landelijke aanbiedingen -->
+        <ion-list no-padding>
+            <ion-item no-lines no-padding *ngFor="let coupon of coupons" (click)="openCouponModal(coupon)">
+                <!-- normally {image.src} -->
+                <img src="{{coupon.imgSrc}}" />
+            </ion-item>
+        </ion-list>
+    </section>
+
+    <section> <!-- Burger deals -->
+        <header padding-bottom>
+            <h4 text-center ion-text color="primary">{{ 'PROMOTION_BURGERDEAL_TITLE' | translate }}</h4>
+            <p text-center class="subtext">{{ 'PROMOTION_BURGERDEAL_TEXT' | translate }}</p>
+        </header>
+        <ion-list no-padding>
+            <ion-item no-lines no-padding *ngFor="let coupon of burgerDeals" (click)="openCouponModal(coupon)">
+                <!-- normally {image.src} -->
+                <img src="{{coupon.imgSrc}}" />
+            </ion-item>
+        </ion-list>
+    </section>
+
+    <section> <!-- lokale acties -->
+        <header padding-bottom>
+            <h4 text-center ion-text color="primary">{{ 'PROMOTION_LOCALDEAL_TITLE' | translate }}</h4>
+            <p text-center class="subtext">{{ 'PROMOTION_LOCALDEAL_TEXT' | translate }}</p>
+        </header>
+    </section>
+</ion-content> 

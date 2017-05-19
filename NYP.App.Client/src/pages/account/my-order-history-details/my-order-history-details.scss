@@ -1,0 +1,25 @@
+page-my-order-history-details {
+    ion-navbar {
+        [hidden] {
+            display: block !important;
+        }
+    }
+
+    .scroll-content {
+        overflow-y: auto;
+    }
+
+    .item[no-lines] {
+        border-width: 1px !important;
+        border-color: rgb(230, 230, 230) !important;
+    }
+
+    .order-btn {
+        @media screen and (min-width: 600px) {
+            display: inline-block !important;
+            width: auto !important;
+            font-size: 20px !important;
+            padding: 1em 2.5em !important;
+        }
+    }
+}

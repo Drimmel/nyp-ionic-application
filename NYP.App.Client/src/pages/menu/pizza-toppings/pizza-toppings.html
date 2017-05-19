@@ -1,0 +1,305 @@
+<!--
+  Generated template for the PizzaToppings page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar color="white">
+      <button ion-button menuToggle="right" end>
+          <ion-icon name="basket"></ion-icon>
+          <span class="receipt-amount" *ngIf="receipt.length > 0">
+              {{getSum()}}
+          </span>
+      </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <header text-center padding>
+        <h3>{{ 'TOPPINGS_PAGE_TITLE' | translate }}</h3>
+        <h6 no-margin>{{productData.name}}</h6>
+    </header>
+
+    <ion-list>
+        <h6 class="topping-title" text-center text-uppercase>{{ 'GENERAL_PICK_SAUCE' | translate }}</h6>
+        <div class="container saus">
+            <ion-item padding-left padding-right>
+                <ion-label>Saus</ion-label>
+                <ion-select>
+                    <ion-option value="tomatensaus" selected="true">Tomatensaus</ion-option>
+                    <ion-option value="extraTomatensaus">Extra Tomatensaus</ion-option>
+                    <ion-option value="bbqSaus">BBQ Saus</ion-option>
+                    <ion-option value="geenSaus">Geen saus</ion-option>
+                    <ion-option value="cremeFriache">Creme Fraiche</ion-option>
+                </ion-select>
+            </ion-item>
+        </div>
+
+        <h6 class="topping-title" text-center text-uppercase>{{ 'GENERAL_PICK_TOPPINGS' | translate }}</h6>
+        
+        <div class="nyp-toppings">
+            <div class="nyp-topping-col" padding-left padding-right>
+                <div class="topping-category">
+                    <div class="topping-labels">
+                        <span>Vlees</span>
+                        <div>
+                            <span>single</span>
+                            <span>double</span>
+                        </div>
+                    </div>
+
+                    <!-- Normally you'd do *ngFor to loop over the topping data array -->
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Tandoori chicken</ion-label>
+                        <ion-radio value="frwewiends"></ion-radio>
+                        <ion-radio value="frwewsd"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Ham (100% kalkoen)</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Pepperoni (beef, halal)</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Rundergehakt</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Natural Chicken</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Chorizo (kalfs)</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                </div>
+                <div class="topping-category">
+                    <div class="topping-labels">
+                        <span>Groente en fruit</span>
+                        <div>
+                            <span>single</span>
+                            <span>double</span>
+                        </div>
+                    </div>
+                    <!-- Normally you'd do *ngFor to loop over the topping data array -->
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Ananas</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Champognon</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Mais</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Kappertjes</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Olijven (groen)</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Rode ui</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Paprika</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Spaanse peper</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Rucola</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Ijsbergsla</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Cherry tomaatjes</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Spinazie</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                </div>
+            </div>
+            <div class="nyp-topping-col nyp-topping-col-2" padding-left padding-right>
+                <div class="topping-category">
+                    <div class="topping-labels">
+                        <span>Kaas</span>
+                        <div>
+                            <span>single</span>
+                            <span>double</span>
+                        </div>
+                    </div>
+                    <!-- Normally you'd do *ngFor to loop over the topping data array -->
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Mozzarella</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Gorgonzola</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Geitenkaas</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>3 Soorten kaas: Mozzarella, cheddar, hollands</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                </div>
+                <div class="topping-category">
+                    <div class="topping-labels">
+                        <span>Vis</span>
+                        <div>
+                            <span>single</span>
+                            <span>double</span>
+                        </div>
+                    </div>
+                    <!-- Normally you'd do *ngFor to loop over the topping data array -->
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Tonijn</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                </div>
+                <div class="topping-category">
+                    <div class="topping-labels">
+                        <span>Diversen</span>
+                        <div>
+                            <span>single</span>
+                            <span>double</span>
+                        </div>
+                    </div>
+                    <!-- Normally you'd do *ngFor to loop over the topping data array -->
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Pesto</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Sambal Swirl</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Sweet Chili Swirl</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Buffalo hot sauce swirl</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Knoflook Swirl</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Knoflook poeder</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                </div>
+                <div class="topping-category">
+                    <div class="topping-labels">
+                        <span>Gratis</span>
+                        <div>
+                            <span>single</span>
+                            <span>double</span>
+                        </div>
+                    </div>
+                    <!-- Normally you'd do *ngFor to loop over the topping data array -->
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Peterselie</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Knoflook poeder</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                    <ion-item class="custom-checkbox" radio-group>
+                        <ion-label>Oregano</ion-label>
+                        <ion-radio value="friends"></ion-radio>
+                        <ion-radio value="family"></ion-radio>
+                    </ion-item>
+                </div>
+            </div>
+        </div>
+        <h6 class="topping-title" text-center text-uppercase>{{ 'GENERAL_PICK_BORDERTOPPING' | translate }}</h6>
+        <div class="container saus">
+            <ion-item padding-left padding-right>
+                <ion-label>Pizzarandtopping</ion-label>
+                <ion-select>
+                    <ion-option value="tomatensaus" selected="true">Knoflookolie</ion-option>
+                    <ion-option value="extraTomatensaus">Gesmolten cheddar - &#8364; 1,25</ion-option>
+                    <ion-option value="bbqSaus">Parmezaanse kaas - &#8364; 1,25</ion-option>
+                    <ion-option value="geenSaus">Niets</ion-option>
+                </ion-select>
+            </ion-item>
+        </div>
+
+        <h6 class="topping-title" text-center text-uppercase>{{ 'CUSTOMPIZZA_PICK_NAME' | translate }}</h6>
+        <div class="container">
+            <p padding-left padding-right text-center>{{ 'CUSTOMPIZZA_NAME_DESCRIPTION' | translate }}</p>
+            <ion-item padding-left padding-right>
+                <ion-input placeholder="Mijn pizza"></ion-input>
+            </ion-item>
+        </div>
+    </ion-list>
+
+</ion-content>
+
+<ion-footer no-border>
+    <ion-navbar color="transparent">
+        <div class="container order-button" padding-left padding-right>
+            <button ion-button block round  navPop (click)="addToReceipt(productData)">
+                Bestellen - &#8364; {{productData.Price}}
+            </button>
+        </div>
+    </ion-navbar>
+</ion-footer>
+

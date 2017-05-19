@@ -1,0 +1,81 @@
+<!-- Left side menu -->
+
+<ion-menu [content]="content" side="left" id="foodmenu" type="overlay" persistent="true">
+    <ion-content padding-bottom>
+        <img padding block src="./assets/images/logo.png" />
+        <ion-list no-margin>
+            <!-- Logged in avatar -->
+            <ion-item no-lines class="ion-item-avatar" (click)="openProfilePage();" menuToggle="left">
+                <ion-avatar item-left>
+                    <img src="./assets/images/avatar.jpg">
+                </ion-avatar>
+                <h2>Hey John Dough</h2>
+                <button ion-button clear item-right>
+                    <ion-icon name="arrow-forward"></ion-icon>
+                </button>
+            </ion-item>
+            <!-- Login example link -->
+            <button ion-item no-lines no-icon (click)="openLoginPage();" menuToggle="left">
+                Login
+            </button>
+        </ion-list>
+        <ion-list>
+            <ion-item *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)" (click)="openCategoryMenu(p);" no-lines  menuToggle="left">
+                {{p.title}}
+            </ion-item>
+        </ion-list>
+        <div class="social-buttons">
+            <a href=""><ion-icon name="logo-facebook" class="facebook"></ion-icon></a>
+            <a href=""><ion-icon name="logo-twitter" class="twitter"></ion-icon></a>
+            <a href=""><ion-icon name="logo-youtube" class="youtube"></ion-icon></a>
+        </div>
+    </ion-content>
+</ion-menu>
+
+<!-- Right side menu (receipt) -->
+<ion-menu [content]="content" side="right" id="receiptmenu" type="overlay">
+    <ion-header>
+        <ion-navbar color="secondary">
+            <button ion-button menuToggle="right" start color="danger">
+                <ion-icon name="close"></ion-icon>
+            </button>
+            <ion-title>{{ 'RECEIPT_TITLE' | translate }}</ion-title>
+        </ion-navbar>
+    </ion-header>
+    <ion-content padding>
+        <h4 ion-text text-center color="primary" margin-top margin-bottom padding-top padding-bottom *ngIf="receipt?.length <= 0">
+            {{ 'RECEIPT_EMPTY_TEXT' | translate }}
+        </h4>
+        <ion-list class="receipt-list">
+            <ion-item no-padding no-lines *ngFor="let product of receipt; let i = index;">
+                <h6 no-margin>{{product.name}}</h6>
+                <div class="receipt-plus-min-price">
+                    <div class="flex-container">
+                        <div id="plus-min">
+                            <button ion-button clear (click)="removeProductFromReceipt(product, i)">
+                                <ion-icon name="remove" ios="md-remove"></ion-icon>
+                            </button>
+                            <span id="productAmount">{{product.amount}}</span>
+                            <button ion-button clear (click)="addProductFromReceipt(product, i)">
+                                <ion-icon name="add" ios="md-add"></ion-icon>
+                            </button>
+                        </div>
+                        <span class="product-bottom">{{product.bottom}}</span>
+                    </div>
+                    <span><b>&#8364; {{totalPrice(product)}}</b></span>
+                </div>
+            </ion-item>
+        </ion-list>
+
+        <div id="total">
+            <h6 no-margin>{{ 'GENERAL_TOTAL_TEXT' | translate }}</h6>
+            <span>
+                &#8364;<span id="totalPrice">{{receiptTotal}}</span>
+            </span>
+        </div>
+
+        <button text-uppercase block ion-button round outline margin-bottom (click)="openPromotionCheckout()" menuToggle="right">{{ 'RECEIPT_ADD_COUPON_TEXT' | translate }}</button>
+        <button text-uppercase block ion-button round (click)="goToCheckout()" menuToggle="right">{{ 'RECEIPT_PAY_TEXT' | translate }}</button>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content></ion-nav>

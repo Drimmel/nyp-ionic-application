@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button id="shoppingBasket" ion-button menuToggle="right" end>
+            <ion-icon name="basket"></ion-icon>
+            <span class="receipt-amount" *ngIf="receipt.length > 0">
+                {{getSum()}}
+            </span>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="container">
+
+        <h3 text-center><b>Coupon: {{title}}</b></h3>
+        <p text-center margin-bottom class="subtext">{{ 'PROMOTION_DETAIL_ADDITION_TEXT' | translate }}</p>
+
+        <div text-center class="vip-warning">
+            <p><b>{{ 'GENERAL_WARN_TITLE' | translate }}</b> {{ 'GENERAL_WARN_VIP_TEXT' | translate }}</p>
+        </div>
+
+        <p text-center ion-text color="primary"><b>{{ 'GENERAL_PICK_PIZZA' | translate }}</b></p>
+        <ion-list>
+            <ion-item>
+                <ion-label>{{ 'GENERAL_PIZZA_TEXT' | translate }}</ion-label>
+                <ion-select>
+                    <ion-option value="gyros"  selected="true">Gyros Pizza</ion-option>
+                    <ion-option value="chickenAvocado">Chicken Avocado Pizza</ion-option>
+                    <ion-option value="margherita">Margherita</ion-option>
+                    <ion-option value="prosEFunghi">Prosciutto e Funghi Pizza</ion-option>
+                    <ion-option value="PomPesto">Pommodori Pesto Pizza</ion-option>
+                    <ion-option value="Hawaii">Hawaii Pizza</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{ 'GENERAL_PICK_BOTTOM' | translate }}</ion-label>
+                <ion-select>
+                    <ion-option value="25NY" selected="true">25cm NY Style</ion-option>
+                    <ion-option value="30NY">30cm NY Style</ion-option>
+                    <ion-option value="35NY">35cm NY Style</ion-option>
+                    <ion-option value="18NY">18cm NY Style</ion-option>
+                    <ion-option value="30I">30cm Italian</ion-option>
+                    <ion-option value="35I">35cm Italian</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+
+        <p text-center ion-text color="primary"><b>{{ 'GENERAL_PICK_PIZZA' | translate }}</b></p>
+        <ion-list>
+            <ion-item>
+                <ion-label>{{ 'GENERAL_PIZZA_TEXT' | translate }}</ion-label>
+                <ion-select>
+                    <ion-option value="gyros" selected="true">Gyros Pizza</ion-option>
+                    <ion-option value="chickenAvocado">Chicken Avocado Pizza</ion-option>
+                    <ion-option value="margherita">Margherita</ion-option>
+                    <ion-option value="prosEFunghi">Prosciutto e Funghi Pizza</ion-option>
+                    <ion-option value="PomPesto">Pommodori Pesto Pizza</ion-option>
+                    <ion-option value="Hawaii">Hawaii Pizza</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>{{ 'GENERAL_PICK_BOTTOM' | translate }}</ion-label>
+                <ion-select>
+                    <ion-option value="25NY" selected="true">25cm NY Style</ion-option>
+                    <ion-option value="30NY">30cm NY Style</ion-option>
+                    <ion-option value="35NY">35cm NY Style</ion-option>
+                    <ion-option value="18NY">18cm NY Style</ion-option>
+                    <ion-option value="30I">30cm Italian</ion-option>
+                    <ion-option value="35I">35cm Italian</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+
+        <button ion-button block color="primary" round (click)="addToReceipt()" navPop>{{ 'GENERAL_ORDER_TEXT_UPCASE' | translate }} - &#8364; {{price}}</button>
+    
+    </div>
+</ion-content>

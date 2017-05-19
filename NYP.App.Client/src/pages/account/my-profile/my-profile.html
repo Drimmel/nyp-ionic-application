@@ -1,0 +1,105 @@
+<!--
+  Generated template for the MyProfile page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle="left" start>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'MYPROFILE_PAGE_TITLE' | translate }}</ion-title>
+    <button ion-button menuToggle="none" (click)="searchActive =! searchActive; openSearchBar();" end>
+        <ion-icon name="search"></ion-icon>
+    </button>
+    <button ion-button menuToggle="right" end>
+        <ion-icon name="basket"></ion-icon>
+        <span class="receipt-amount" *ngIf="receipt.length > 0">
+            {{getSum()}}
+        </span>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <header>
+        <div class="blur"></div>
+        <div class="container">
+            <ion-item no-lines no-padding text-center color="transparent">
+                <ion-avatar>
+                    <img src="./assets/images/avatar.jpg">
+                </ion-avatar>
+            </ion-item>
+            <h4 ion-text text-center no-margin color="white">John Dough</h4>
+        </div>
+    </header>
+
+        <ion-list no-lines no-margin padding-bottom>
+            <ion-item (click)="openMyDetailsPage()">
+                <ion-icon color="light" name="person" item-left></ion-icon>
+                <h3 ion-text color="primary"><b>{{ 'MYPROFILE_MYDETAILS_TEXT' | translate }}</b></h3>
+                <ion-icon color="light" name="arrow-forward" item-right></ion-icon>
+            </ion-item>
+            <ion-item (click)="openAddressesList()">
+                <ion-icon color="light" name="pin" item-left></ion-icon>
+                <h3 ion-text color="primary"><b>{{ 'MYPROFILE_ADDRESSES_TEXT' | translate }}</b></h3>
+                <ion-icon color="light" name="arrow-forward" item-right></ion-icon>
+            </ion-item>
+            <ion-item (click)="openMyPizzaPoints()">
+                <ion-icon color="light" name="star" item-left></ion-icon>
+                <h3 ion-text color="primary"><b>{{ 'MYPROFILE_PIZZAPOINTS_TEXT' | translate }} <span class="dash">-</span> <span ion-text color="light">4920</span></b></h3>
+                <ion-icon color="light" name="arrow-forward" item-right></ion-icon>
+            </ion-item>
+            <ion-item (click)="openVipcard()">
+                <ion-icon color="light" name="card" item-left></ion-icon>
+                <h3 ion-text color="primary"><b>{{ 'MYPROFILE_VIPCARD_TEXT' | translate }}</b></h3>
+                <ion-icon color="light" name="arrow-forward" item-right></ion-icon>
+            </ion-item>
+            <ion-item (click)="openMyPizzas()">
+                <ion-icon color="light" name="pizza" item-left></ion-icon>
+                <h3 ion-text color="primary"><b>{{ 'MYPROFILE_MY_PIZZAS_TEXT' | translate }}</b></h3>
+                <ion-icon color="light" name="arrow-forward" item-right></ion-icon>
+            </ion-item>
+        </ion-list>
+
+        <h6 margin-bottom padding-left><b>{{ 'MYPROFILE_LATESTORDERS_TEXT' | translate }}</b></h6>
+        <ion-list id="last-3-orders">
+            <ion-item no-lines (click)="openMyOrderHistoryDetailsPage()">
+                <ion-avatar item-left text-center>
+                    <p ion-text color="dark">26</p>
+                    <p>JAN</p>
+                </ion-avatar>
+                <h3 ion-text color="primary"><b>Simone de baeuvoirlaan 18</b></h3>
+                <p>1277BH, Huizen - <b ion-text color="dark">&#8364; 47,83</b></p>
+                <ion-icon color="light" name="arrow-forward" item-right></ion-icon>
+            </ion-item>
+            <ion-item no-lines (click)="openMyOrderHistoryDetailsPage()">
+                <ion-avatar item-left text-center>
+                    <p ion-text color="dark">26</p>
+                    <p>JAN</p>
+                </ion-avatar>
+                <h3 ion-text color="primary"><b>Simone de baeuvoirlaan 18</b></h3>
+                <p>1277BH, Huizen - <b ion-text color="dark">&#8364; 47,83</b></p>
+                <ion-icon color="light" name="arrow-forward" item-right></ion-icon>
+            </ion-item>
+            <ion-item no-lines (click)="openMyOrderHistoryDetailsPage()">
+                <ion-avatar item-left text-center>
+                    <p ion-text color="dark">26</p>
+                    <p>JAN</p>
+                </ion-avatar>
+                <h3 ion-text color="primary"><b>Simone de baeuvoirlaan 18</b></h3>
+                <p>1277BH, Huizen - <b ion-text color="dark">&#8364; 47,83</b></p>
+                <ion-icon color="light" name="arrow-forward" item-right></ion-icon>
+            </ion-item>
+        </ion-list>
+
+    <ion-item class="view_all_orderhistory" no-lines (click)="openMyOrderHistory()">
+        <h3 ion-text>{{ 'MYPROFILE_ORDERHISTORY_TEXT' | translate }}</h3>
+        <ion-icon color="light" name="arrow-forward" item-right></ion-icon>
+    </ion-item>
+
+</ion-content>

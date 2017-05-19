@@ -1,0 +1,86 @@
+<!--
+  Generated template for the MyPizzaPoints page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>{{ 'PIZZAPOINTS_PAGE_TITLE' | translate }}</ion-title>
+        <button ion-button menuToggle="none" (click)="searchActive =! searchActive; openSearchBar();" end>
+            <ion-icon name="search"></ion-icon>
+        </button>
+        <button ion-button menuToggle="right" end>
+            <ion-icon name="basket"></ion-icon>
+            <span class="receipt-amount" *ngIf="receipt.length > 0">
+                {{getSum()}}
+            </span>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="container">
+        <h1 ion-text text-center no-margin color="primary"><b>4920</b></h1>
+        <h6 text-center no-margin>{{ 'PIZZAPOINTS_NR_TITLE' | translate }}</h6>
+        <p text-center margin-top>{{ 'PIZZAPOINTS_PAGE_TEXT' | translate }}</p>
+        
+        <ion-item no-padding margin-bottom margin-top>
+            <ion-input type="text" placeholder="{{ 'PIZZAPOINTS_INPUT_PLACEHOLDER' | translate }}"></ion-input>
+        </ion-item>
+        <button ion-button color="primary" outline block round (click)="addPizzaPoints()">{{ 'PIZZAPOINTS_BUTTON_TEXT' | translate }}</button>
+    </div>
+        <ion-list margin-top>
+            <ion-item no-padding (click)="addToReceipt(
+                {'name': 'Gratis Garlic Bread',
+                'desc': 'Knoflookbroodje met kruidenboter, kaas en knoflookpulp.',
+                'bottom':'Portie',
+                'Price': 0,
+                'imgsrc':  './assets/images/others/garlic-bread.png' }
+            )">
+                <h2 ion-text color="primary"><b>Gratis Garlic Bread</b></h2>
+                <p class="product-description">Knoflookbroodje met kruidenboter, kaas en knoflookpulp.</p>
+                <p margin-top ion-text color="black"><b>750 pizzapunten</b></p>
+                <ion-avatar item-right>
+                    <img src="./assets/images/others/garlic-bread.png" />
+                </ion-avatar>
+                <button item-right ion-button clear>
+                    <ion-icon name="add"></ion-icon>
+                </button>
+            </ion-item>
+            <ion-item no-padding (click)="addToReceipt(
+                {'name': 'Gratis Margherita Pizza',
+                'desc': 'Pizza met tomatensaus en mozzarella. Met boterzachte knoflookolie op de rand van de pizza. Tip! Ook lekker met oregano.',
+                'bottom':'25cm NY Style',
+                'Price': 0,
+                'imgsrc':  './assets/images/pizzas/Margarita.png' }
+            )">
+                <h2 ion-text color="primary"><b>Gratis Margherita Pizza</b></h2>
+                <p class="product-description">Pizza met tomatensaus en mozzarella. Met boterzachte knoflookolie op de rand van de pizza. Tip! Ook lekker met oregano.</p>
+                <p margin-top ion-text color="black">25cm NY Style -<b> 3000 pizzapunten</b></p>
+                <ion-avatar item-right>
+                    <img src="./assets/images/pizzas/Margarita.png" />
+                </ion-avatar>
+                <button item-right ion-button clear>
+                    <ion-icon name="add"></ion-icon>
+                </button>
+            </ion-item>
+            <ion-item no-padding (click)="addToReceipt(
+                {'name': 'Gratis Brooklyn Style Pizza',
+                'desc': 'Pizza met tomatensaus, 3 soorten kaas; mozzarella, Cheddar, Goudse en pepperoni. Met boterzachte knoflookolie op de rand van de pizza.',
+                'bottom':'25xm NY Style',
+                'Price': 0,
+                'imgsrc':  './assets/images/pizzas/brooklyn.png' }
+            )">
+                <h2 ion-text color="primary"><b>Gratis Brooklyn Style Pizza</b></h2>
+                <p class="product-description">Pizza met tomatensaus, 3 soorten kaas; mozzarella, Cheddar, Goudse en pepperoni. Met boterzachte knoflookolie op de rand van de pizza.</p>
+                <p margin-top ion-text color="black">25cm NY Style -<b> 3900 pizzapunten</b></p>
+                <ion-avatar item-right>
+                    <img src="./assets/images/pizzas/Brooklyn.png" />
+                </ion-avatar>
+                <button item-right ion-button clear>
+                    <ion-icon name="add"></ion-icon>
+                </button>
+            </ion-item>
+        </ion-list>
+</ion-content>

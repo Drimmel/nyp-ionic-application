@@ -1,0 +1,60 @@
+page-my-pizzas {
+
+    ion-header {
+        ion-navbar {
+            button[hidden] {
+                display: block !important;
+            }
+        }
+    }
+
+    ion-content {
+        @media screen and (min-width: 600px) {
+            background-color: #f4f4f7 !important;
+        }
+    }
+
+    .scroll-content {
+        overflow-y: auto;
+    }
+
+    ion-list {
+        @media screen and (min-width: 600px) {
+            display: flex;
+
+            ion-item {
+                padding: 16px !important;
+                margin: 12px 12px 12px 12px !important;
+                width: calc(50% - 24px) !important;
+                border-radius: 2px;
+                font-size: 1.4rem;
+                background: #fff;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+                border-bottom: none !important;
+                box-sizing: border-box;
+
+                .item-inner {
+                    border-bottom: none !important;
+
+                    ion-label {
+                        margin: 0 !important;
+                    }
+                }
+            }
+        }
+
+        ion-item {
+            &:first-child {
+                border-top: none !important;
+            }
+
+            ion-label {
+                white-space: normal;
+
+                span {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}

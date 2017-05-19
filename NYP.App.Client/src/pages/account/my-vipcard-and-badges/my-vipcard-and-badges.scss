@@ -1,0 +1,27 @@
+page-my-vipcard-and-badges {
+    ion-navbar {
+        [hidden] {
+            display: block !important;
+        }
+    }
+
+    .scroll-content {
+        overflow-y: auto;
+    }
+
+    img {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .align_item_vertically {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    ion-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,42 @@
+﻿[
+  {
+    "name": "Margherita Pizza ",
+    "desc": "Pizza met tomatensaus en mozzarella. Met boterzachte knoflookolie op de rand van de pizza. Tip! Ook lekker met oregano.",
+    "bottom": "30cm NY Style",
+    "Price": 11,
+    "imgsrc": "./assets/images/pizzas/Margarita.png",
+    "desc-small": "Pizza met tomatensaus, mozzarella, Cheddar, Goudse en Gorgonzola. Met boterzachte knoflookolie op de rand van de pizza."
+  },
+  {
+    "name": "Brooklyn Style Pizza ",
+    "desc": "Pizza met tomatensaus, 3 soorten kaas: mozzarella, Cheddar, Goudse en pepperoni. Met boterzachte knoflookolie op de rand van de pizza.",
+    "bottom": "30cm NY Style",
+    "Price": 13,
+    "imgsrc": "./assets/images/pizzas/Brooklyn.png",
+    "desc-small": "Pizza met tomatensaus, mozzarella, Cheddar, Goudse en Gorgonzola. Met boterzachte knoflookolie op de rand van de pizza."
+  },
+  {
+    "name": "6 Cheese Pizza",
+    "desc": "Overheerlijke pizza met onze natuurlijke tomatensaus, Cheddar, Goudse, 100% mozzarella, geitenkaas, Raclette, en gesmolten Parmigiano Reg.",
+    "bottom": "25xm NY Style",
+    "Price": 12,
+    "imgsrc": "./assets/images/pizzas/6-cheese.png",
+    "desc-small": "Pizza met tomatensaus, mozzarella, Cheddar, Goudse en Gorgonzola. Met boterzachte knoflookolie op de rand van de pizza."
+  },
+  {
+    "name": "BBQ Chicken Pizza ",
+    "desc": "Pizza met BBQ-saus i.p.v. tomatensaus, mozzarella, natural chicken, paprika, rode ui en maïs. Met boterzachte knoflookolie op de rand van de pizza.",
+    "bottom": "30cm NY Style",
+    "Price": 14,
+    "imgsrc": "./assets/images/pizzas/bbq-chicken.png",
+    "desc-small": "Pizza met tomatensaus, mozzarella, Cheddar, Goudse en Gorgonzola. Met boterzachte knoflookolie op de rand van de pizza."
+  },
+  {
+    "name": "Buffalo Chicken Pizza ",
+    "desc": "Pizza met natural chicken, rode ui, mozzarella, cheddar, Goudse, peterselie, Buffalo hot sauce en gesmolten cheddar.",
+    "bottom": "30cm NY Style",
+    "Price": 15,
+    "imgsrc": "./assets/images/pizzas/buffalo-chicken.png",
+     "desc-small": "Pizza met tomatensaus, mozzarella, Cheddar, Goudse en Gorgonzola. Met boterzachte knoflookolie op de rand van de pizza."
+  }
+]

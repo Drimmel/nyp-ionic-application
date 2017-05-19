@@ -1,0 +1,25 @@
+page-register {
+    ion-item {
+        position: relative;
+        border: none !important;
+
+        .item-inner {
+            padding-right: 0 !important;
+            border: none !important;
+        }
+
+        ion-input {
+            box-sizing: border-box;
+            border: 1px solid transparent;
+            border-bottom-color: #c8c7cc;
+            transition: all .2s ease-in-out;
+        }
+
+        ion-input.invalid {
+            border: 1px solid #e30613;
+
+            &:after {
+            }
+        }
+    }
+}

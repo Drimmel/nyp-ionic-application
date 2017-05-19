@@ -1,0 +1,90 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle="left" start>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="header_title">
+            Pizza's
+        </ion-title>
+        <button ion-button menuToggle="none" (click)="searchActive =! searchActive;" end>
+            <ion-icon name="search"></ion-icon>
+        </button>
+        <button ion-button menuToggle="right" end>
+            <ion-icon name="basket"></ion-icon>
+            <span class="receipt-amount" *ngIf="receipt.length > 0">
+                {{getSum()}}
+            </span>
+        </button>
+    </ion-navbar>
+    <ion-toolbar *ngIf="searchActive" color="primary">
+        <ion-searchbar focus-searchinput (ionInput)="getItems($event)" [showCancelButton]="true" (ionCancel)="searchActive = false" color="primary"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content no-bounce class="home" (click)="searchActive = false; openSearchBar();">
+    <div class="header-image">
+        <ion-slides autoplay="true" [autoplay]="4000" loop="true">
+            <ion-slide style="background-image: url(./assets/images/slides/slide_three.jpg)"></ion-slide>
+            <ion-slide style="background-image: url(./assets/images/slides/slide_one.png)"></ion-slide>
+            <ion-slide style="background-image: url(./assets/images/slides/slide_two.png)"></ion-slide>
+        </ion-slides>
+    </div>
+    <ion-list class="main-content">
+        <!-- Double Tasty -->
+        <ion-item padding tappable no-lines (click)="openDoubleTastyPizzaModal()">
+            <h2 ion-text color="primary"><b>Double Tasty</b></h2>
+            <p class="product-description">{{ 'PIZZAS_DOUBLETASTY_DESCRIPTION' | translate }}</p>
+            <span>25cm NY Style -</span> &nbsp; <span><b>&#8364;12</b></span>
+            <ion-avatar item-right>
+                <img src="./assets/images/pizzas/double-tasty.png" />
+            </ion-avatar>
+            <button ion-button round padding margin-top color="primary">{{ 'GENERAL_PICK_THIS' | translate }} pizza</button>
+        </ion-item>
+        <!-- Zelf samenstellen -->
+        <ion-item padding tappable no-lines (click)="openCustomPizzaModal()">
+            <h2 ion-text color="primary"><b>Zelf samenstellen</b></h2>
+            <p class="product-description">{{ 'PIZZAS_CUSTOM_DESCRIPTION' | translate }}</p>
+            <span>25cm NY Style -</span> &nbsp; <span><b>&#8364;11</b></span>
+            <ion-avatar item-right>
+                <img src="./assets/images/pizzas/zelf-samenstellen.jpg" />
+            </ion-avatar>
+            <button ion-button round padding margin-top color="primary">{{ 'GENERAL_PICK_THIS' | translate }} pizza</button>
+
+        </ion-item>
+
+        <!-- Standaard pizza's -->
+        <ion-item *ngFor="let product of productData" padding no-lines tappable (click)="openProductDetailPage(product)">
+            <h2 ion-text color="primary"><b>{{product.name}}</b></h2>
+            <p class="product-description">{{product.desc}}</p>
+            <span>{{product.bottom}} -</span> &nbsp; <span><b>&#8364;{{product.Price}}</b></span>
+            <ion-avatar item-right>
+                <img src="{{product.imgsrc}}" />
+            </ion-avatar>
+            <button ion-button round padding margin-top color="primary">{{ 'GENERAL_PICK_THIS' | translate }} pizza</button>
+        </ion-item>
+
+        <!-- Standaard pizza's -->
+        <ion-item *ngFor="let product of productData" padding no-lines tappable (click)="openProductDetailPage(product)">
+            <h2 ion-text color="primary"><b>{{product.name}}</b></h2>
+            <p class="product-description">{{product.desc}}</p>
+            <span>{{product.bottom}} -</span> &nbsp; <span><b>&#8364;{{product.Price}}</b></span>
+            <ion-avatar item-right>
+                <img src="{{product.imgsrc}}" />
+            </ion-avatar>
+            <button ion-button round padding margin-top color="primary">{{ 'GENERAL_PICK_THIS' | translate }} pizza</button>
+        </ion-item>
+
+        <!-- Standaard pizza's -->
+        <ion-item *ngFor="let product of productData" padding no-lines tappable (click)="openProductDetailPage(product)">
+            <h2 ion-text color="primary"><b>{{product.name}}</b></h2>
+            <p class="product-description">{{product.desc}}</p>
+            <span>{{product.bottom}} -</span> &nbsp; <span><b>&#8364;{{product.Price}}</b></span>
+            <ion-avatar item-right>
+                <img src="{{product.imgsrc}}" />
+            </ion-avatar>
+            <button ion-button round padding margin-top color="primary">{{ 'GENERAL_PICK_THIS' | translate }} pizza</button>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

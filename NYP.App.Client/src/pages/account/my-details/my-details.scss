@@ -1,0 +1,40 @@
+page-my-details {
+    ion-navbar {
+        [hidden] {
+            display: block !important;
+        }
+    }
+
+    .scroll-content {
+        overflow-y: auto;
+    }
+
+    ion-item {
+        padding: 0 !important;
+
+        .datetime-text:empty:not(:focus):before {
+            content: "22/10/1994";
+            color: #999;
+        }
+    }
+
+    ion-col {
+        padding: 0;
+        padding-right: 8px;
+
+        &:last-child {
+            padding-right: 0px;
+        }
+
+        padding {
+            font-size: 0.9em;
+        }
+    }
+
+    .order-btn {
+        @media screen and (min-width: 600px) {
+            font-size: 20px !important;
+            padding: 1em 2.5em !important;
+        }
+    }
+}

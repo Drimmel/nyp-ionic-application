@@ -1,0 +1,38 @@
+<!--
+  Generated template for the MyPizzas page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+      <ion-title>{{ 'MYPROFILE_MY_PIZZAS_TEXT' | translate }}</ion-title>
+      <button ion-button menuToggle="right" end>
+          <ion-icon name="basket"></ion-icon>
+          <span class="receipt-amount" *ngIf="receipt.length > 0">
+              {{getSum()}}
+          </span>
+      </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="myPizzas?.length <= 0">
+        <h4 ion-text text-center color="primary" margin-top margin-bottom padding-top padding-bottom>
+            {{ 'MYPIZZAS_EMPTY_TEXT' | translate }}
+        </h4>
+    </div>
+    <ion-list no-margin no-padding>
+        <ion-item no-padding *ngFor="let pizza of myPizzas" (click)="pizzaOptionsSheet(pizza)">
+            <h2 ion-text color="primary"><b>{{pizza.title}}</b></h2>
+            <p>{{pizza.description}}</p>
+            <span>{{pizza.bottom}} -</span> &nbsp; <span><b>&#8364;{{pizza.price}}</b></span>
+            <button ion-button clear item-right>
+                Kies
+            </button>
+        </ion-item>
+    </ion-list>
+</ion-content>

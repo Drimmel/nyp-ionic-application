@@ -1,0 +1,70 @@
+
+<ion-header no-border>
+
+  <ion-navbar color="transparent">
+      <button id="shoppingBasket"  ion-button menuToggle="right" end>
+          <ion-icon name="basket"></ion-icon>
+          <span class="receipt-amount" *ngIf="receipt.length > 0">
+              {{getSum()}}
+          </span>
+      </button>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <div id="header-image">
+        <img src="{{productData.imgsrc}}"/>
+    </div>
+
+    <div id="main-content-container"  pizza-detail-drag>
+        <span ion-text id="pizza-arrow-down-button" (click)="openHeaderPizza()">
+            <ion-icon color="white" name="arrow-down" id="arrowdown"></ion-icon>
+        </span>
+        <div id="main-content">
+
+            <div class="container" text-center padding>
+                <h3 ion-text text-center margin-top margin-bottom padding-top>{{productData.name}}</h3>
+                <p ion-tect text-center margin-top margin-bottom>{{productData.desc}}</p>
+                <a ion-text text-center margin-top margin-bottom color="primary" (click)="showNutritionalValue()">{{ 'PRODUCTDETAILS_VIEW_NUTRITION' | translate }}</a>
+
+                <ion-list no-margin margin-top>
+                    <ion-item>
+                        <ion-label>{{ 'GENERAL_PICK_BOTTOM' | translate }}:</ion-label>
+                        <ion-select>
+                            <ion-option value="25cmNY" selected="true">25cm NY Style - &#8364;11.99</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-list>
+
+                <button id="open-toppings" ion-button color="primary" clear text-uppercase margin-top margin-bottom (click)="openPizzaToppingsPage()">
+                    <ion-icon name="brush" margin-right></ion-icon>
+                    <span>{{ 'PRODUCTDETAILS_CHANGE_TOPPING' | translate }}</span>
+                </button>
+
+                <div id="plus-min" margin-top margin-bottom>
+                    <button color="black" ion-button clear (click)="removeProduct()">
+                        <ion-icon name="remove" ios="md-remove"></ion-icon>
+                    </button>
+                    <span ion-text color="black" id="productAmount">{{productAmount}}</span>
+                    <button color="black" ion-button clear (click)="addProduct()">
+                        <ion-icon name="add" ios="md-add"></ion-icon>
+                    </button>
+                </div>
+
+                <!--<h3 ion-text id="productPrice" text-center margin-top margin-bottom><b>&#8364; <span id="totalPrice"></span></b></h3>-->
+
+                <button class="order-btn" ion-button color="primary" block round margin-top margin-bottom navPop text-uppercase (click)="addToReceipt(productData)">{{ 'GENERAL_ORDER_TEXT' | translate }} - <b>&nbsp; &#8364; {{totalPrice * productAmount}}</b></button>
+            </div>
+        </div>
+    </div>
+
+</ion-content>
+
+<div id="nutritionalValue">
+    <button ion-button clear id="closeNutritional" (click)="closeNutritionalValue()">
+        <ion-icon name="close"></ion-icon>
+    </button>
+    <img src="https://images.newyorkpizza.nl/Products/Original/Double_Pepperoni_Pizza-848.jpg" />
+</div>

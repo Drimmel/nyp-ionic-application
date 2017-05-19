@@ -1,0 +1,88 @@
+page-my-addresses-list {
+    ion-navbar {
+        [hidden] {
+            display: block !important;
+        }
+    }
+
+    .list-ios > .item-block:first-child {
+        border-top: none;
+    }
+
+    ion-item:last-child {
+        border-bottom: none !important;
+    }
+
+    h4 {
+        margin: 0 !important;
+    }
+
+    ion-content {
+        @media screen and (min-width: 600px) {
+            background-color: #f4f4f7 !important;
+        }
+
+        .scroll-content {
+            overflow-y: auto;
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        ion-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            ion-item {
+                width: 50% !important;
+                height: 200px;
+                box-sizing: border-box;
+                padding: 1rem !important;
+
+                @media screen and (min-width: 600px) {
+                    padding: 0em !important;
+                    margin: 12px 12px 12px 12px !important;
+                    width: calc(50% - 24px) !important;
+                    border-radius: 2px;
+                    font-size: 1.4rem;
+                    background: #fff;
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+                    border-bottom: none !important;
+                    box-sizing: border-box;
+                }
+
+                .item-inner {
+                    text-align: center;
+
+                    ion-label {
+                        margin: 0 !important;
+
+                        h4 {
+                            font-size: 2rem;
+                            white-space: normal !important;
+                            margin-bottom: 1.5rem !important;
+                        }
+
+                        p {
+                            font-size: 1.8rem !important;
+                            white-space: normal !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        button {
+            width: auto !important;
+            margin: 0 auto !important;
+        }
+
+        .order-btn {
+            @media screen and (min-width: 600px) {
+                display: inline-block !important;
+                width: auto !important;
+                font-size: 20px !important;
+                padding: 1em 2.5em !important;
+            }
+        }
+    }
+}

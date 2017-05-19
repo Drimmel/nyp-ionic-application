@@ -1,0 +1,97 @@
+page-pizza-toppings {
+    ion-header {
+        ion-navbar {
+            button, button[hidden] {
+                display: block !important;
+                color: #086 !important;
+            }
+        }
+    }
+
+    .nyp-toppings {
+        &:after {
+            clear: both;
+            content: '';
+            display: block;
+        }
+
+        .nyp-topping-col {
+            
+            @media screen and (min-width: 600px) {
+                width: 50%;
+                float: left;
+                position: relative;
+                min-height: 1px;
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .topping-labels {
+                font-size: 1em;
+                color: #9d9d9d;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 16px;
+
+                div {
+                    span {
+                        display: inline-block;
+                        //width: 37px;
+                        text-align: center;
+                        overflow: hidden;
+                    }
+                }
+            }
+
+            ion-item {
+                padding: 0;
+
+                &[aria-activedescendant] {
+                    ion-label {
+                        color: #086;
+                    }
+                }
+            }
+            /* Checkboxes */
+            .custom-checkbox {
+                .item-cover {
+                    width: 0%;
+                    height: 0%;
+                }
+            }
+
+            .radio-ios {
+                margin-left: 16px !important;
+                margin-right: 0px !important;
+                width: 21px;
+                height: 21px;
+                border-width: 1px;
+                border-style: solid;
+                border-radius: 50%;
+                border-color: #c8c7cc;
+
+                &:first-child {
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+    .topping-title {
+        background-color: #efefef;
+        color: #8d8d8d;
+        font-weight: 100;
+        font-size: 1.3rem;
+        line-height: 2.5rem;
+    }
+
+    .container.order-button {
+        z-index: 100;
+        width: 100%;
+        max-width: 500px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
